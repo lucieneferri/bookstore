@@ -14,7 +14,7 @@ class Books(models.Model):
     author = models.ManyToManyField('Authors')
     release_date = models.DateField()
     genre = models.CharField(max_length=100)
-    batch_number = models.ForeignKey(Batch, on_delete=models.PROTECT)
+    batch_number = models.ForeignKey (Batch, on_delete=models.PROTECT)
 
     def __str__(self):
         return self.name
@@ -25,6 +25,7 @@ class Authors(models.Model):
     country = models.CharField(max_length=100)
     genre = models.CharField(max_length=100)
     bio = models.TextField()
+    books_written = models.ManyToManyField
 
 
     def __str__(self):

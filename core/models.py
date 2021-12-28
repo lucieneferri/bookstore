@@ -25,7 +25,7 @@ class Authors(models.Model):
     country = models.CharField(max_length=100)
     genre = models.CharField(max_length=100)
     bio = models.TextField()
-    books_written = models.ManyToManyField
+    books_written = models.ManyToManyField(Books)
 
 
     def __str__(self):

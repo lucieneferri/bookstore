@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import AbstractUser
 
 class Batch(models.Model):
     identifier_code = models.CharField(max_length=100)
@@ -50,3 +51,15 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_number + '-' + self.value
+
+#Model para cadastro de funcionários
+class Usuario(AbstractUser):
+    username = models.CharField(max_length=100)
+    password = models.CharField(max_length=10)
+    email= models.EmailField(max_length=254, unique=True)
+    is_staff = models.BooleanField(default=False)
+    is_superuser = models.BooleanField(default=False)#se terá acesso ao django admin
+
+    USERNAME_FIELD = 'email'
+
+

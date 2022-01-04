@@ -35,7 +35,7 @@ class Authors(models.Model):
 class Client(models.Model):
     name = models.CharField(max_length=100)
     cpf = models.IntegerField()
-    birth_date = models.DateField
+    birth_date = models.DateField(blank=True, null=True)
 
     def __str__(self):
         return self.name

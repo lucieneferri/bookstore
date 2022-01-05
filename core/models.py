@@ -54,12 +54,12 @@ class Order(models.Model):
 
 #Model para cadastro de funcionários
 class Usuario(AbstractUser):
-    username = models.CharField(max_length=100)
+    username = models.CharField(max_length=100, unique= True)
     password = models.CharField(max_length=10)
     email= models.EmailField(max_length=254, unique=True)
     is_staff = models.BooleanField(default=False)
     is_superuser = models.BooleanField(default=False)#se terá acesso ao django admin
 
-    USERNAME_FIELD = 'email'
+  
 
 

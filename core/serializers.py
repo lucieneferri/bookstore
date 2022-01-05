@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Batch, Books, Authors, Client, Order
+from .models import Batch, Books, Authors, Client, Order, Usuario
 
 class BatchSerializer(serializers.ModelSerializer):
     class Meta:
@@ -54,4 +54,16 @@ class OrderSerializer(serializers.ModelSerializer):
             'order_date',
             'value',
             'purchases'
+        ]
+
+class UsuarioSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Usuario
+        fields = [
+            'id',
+            'username',
+            'password',
+            'email',
+            'is_staff',
+            'is_superuser'
         ]

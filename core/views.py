@@ -1,8 +1,8 @@
 from django.db.models import query
 from django.shortcuts import render
 from rest_framework import viewsets
-from core.models import Authors, Batch, Books, Client, Order
-from core.serializers import BatchSerializer, BooksSerializer, AuthorsSerializer, ClientSerializer,OrderSerializer
+from core.models import Authors, Batch, Books, Client, Order, Usuario
+from core.serializers import BatchSerializer, BooksSerializer, AuthorsSerializer, ClientSerializer,OrderSerializer, UsuarioSerializer
 
 class AuthorsViewSet(viewsets.ModelViewSet):
     serializer_class = AuthorsSerializer
@@ -23,4 +23,8 @@ class ClientViewSet(viewsets.ModelViewSet):
 class OrderViewSet(viewsets.ModelViewSet):
     serializer_class = OrderSerializer
     queryset = Order.objects.all()
+
+class UsuarioViewSet(viewsets.ModelViewSet):
+    serializer_class = UsuarioSerializer
+    queryset = Usuario.objects.all()
 

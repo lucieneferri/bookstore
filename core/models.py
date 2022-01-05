@@ -15,7 +15,7 @@ class Books(models.Model):
     author = models.ManyToManyField('Authors')
     release_date = models.DateField()
     genre = models.CharField(max_length=100)
-    batch_number = models.ForeignKey (Batch, on_delete=models.PROTECT)
+    batch_number = models.ForeignKey (Batch, on_delete=models.PROTECT, null=True)
 
     def __str__(self):
         return self.name
@@ -26,7 +26,7 @@ class Authors(models.Model):
     country = models.CharField(max_length=100)
     genre = models.CharField(max_length=100)
     bio = models.TextField()
-    books_written = models.ManyToManyField(Books)
+    books_written = models.ManyToManyField(Books, blank=True)
 
 
     def __str__(self):
@@ -57,7 +57,7 @@ class Usuario(AbstractUser):
     username = models.CharField(max_length=100, unique= True)
     password = models.CharField(max_length=10)
     email= models.EmailField(max_length=254, unique=True)
-    is_staff = models.BooleanField(default=False)
+    is_staff = models.BooleanField(default=False)#presente no AbstractUser
     is_superuser = models.BooleanField(default=False)#se terá acesso ao django admin
 
   

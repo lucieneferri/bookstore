@@ -89,8 +89,9 @@ class UsuarioSerializer(serializers.ModelSerializer):
             'password',
             'password_confirm',
             'email',
-            'is_staff',
+            'is_staff', #by default is False, if checked it's True
             'is_superuser'
+            
         ]
     def save(self):
 

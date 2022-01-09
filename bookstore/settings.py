@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'core',
+    'rest_framework.authtoken',
 ]
 
 MIDDLEWARE = [
@@ -126,3 +127,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #Adicionado para indicar ao Django qual modelo de usuário ele deve usar
 AUTH_USER_MODEL = "core.Usuario"
+
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
+}

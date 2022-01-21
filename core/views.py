@@ -39,8 +39,9 @@ class UsuarioViewSet(viewsets.ModelViewSet):
     queryset = Usuario.objects.all()
 
 
+#DRF nao tem URL pronta de logout
 class Logout(APIView):
-    def get(self, request, format=None):
-        # simply delete the token to force a login
+    def get(self, request):
+
         request.user.auth_token.delete()
         return Response(' User Logged Out Successfully')

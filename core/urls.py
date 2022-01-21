@@ -10,7 +10,8 @@ router.register(r'book', BooksViewSet)
 router.register(r'client', ClientViewSet)
 router.register(r'order', OrderViewSet)
 router.register(r'cadastro_usuario', UsuarioViewSet)
+from core import views
 
 urlpatterns = [
-    path('', include(router.urls))
+    path('', include(router.urls)),
 ]

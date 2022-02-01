@@ -31,7 +31,8 @@ class AuthorsSerializer(serializers.ModelSerializer):
             'name',
             'country',
             'genre',
-            'bio'
+            'bio',
+            'books_written'
         ]
 
 class ClientSerializer(serializers.ModelSerializer):

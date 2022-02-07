@@ -15,6 +15,7 @@
 - [x] Cadastro de usuarios
 - [x] Autenticacao por token
 - [x] Logout
+- [x] Consteinerização
 
 
 Como rodar o projeto
